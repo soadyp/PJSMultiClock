@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PJSMultiClock", "PJSMultiClock\PJSMultiClock.csproj", "{B4C83EA7-2198-4915-8601-BBE199DEC728}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PJSCore", "PJSCore\PJSCore.csproj", "{C56D03EC-6E1C-46C8-9A64-E2951F6ACDFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PJSTest", "PJSTest\PJSTest.csproj", "{8DC2C8D9-853E-4298-8FA0-B3555F9F3A41}"
+EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "SetupMultiClock", "SetupMultiClock\SetupMultiClock.isproj", "{B75B676E-8AD3-46F9-B8AE-FB221CA79A4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
+		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4C83EA7-2198-4915-8601-BBE199DEC728}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C83EA7-2198-4915-8601-BBE199DEC728}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{B4C83EA7-2198-4915-8601-BBE199DEC728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C83EA7-2198-4915-8601-BBE199DEC728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C83EA7-2198-4915-8601-BBE199DEC728}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C83EA7-2198-4915-8601-BBE199DEC728}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{B4C83EA7-2198-4915-8601-BBE199DEC728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C83EA7-2198-4915-8601-BBE199DEC728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C83EA7-2198-4915-8601-BBE199DEC728}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C83EA7-2198-4915-8601-BBE199DEC728}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{C56D03EC-6E1C-46C8-9A64-E2951F6ACDFA}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{C56D03EC-6E1C-46C8-9A64-E2951F6ACDFA}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{C56D03EC-6E1C-46C8-9A64-E2951F6ACDFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C56D03EC-6E1C-46C8-9A64-E2951F6ACDFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C56D03EC-6E1C-46C8-9A64-E2951F6ACDFA}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{C56D03EC-6E1C-46C8-9A64-E2951F6ACDFA}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{C56D03EC-6E1C-46C8-9A64-E2951F6ACDFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C56D03EC-6E1C-46C8-9A64-E2951F6ACDFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C56D03EC-6E1C-46C8-9A64-E2951F6ACDFA}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{C56D03EC-6E1C-46C8-9A64-E2951F6ACDFA}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{8DC2C8D9-853E-4298-8FA0-B3555F9F3A41}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC2C8D9-853E-4298-8FA0-B3555F9F3A41}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{8DC2C8D9-853E-4298-8FA0-B3555F9F3A41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DC2C8D9-853E-4298-8FA0-B3555F9F3A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DC2C8D9-853E-4298-8FA0-B3555F9F3A41}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DC2C8D9-853E-4298-8FA0-B3555F9F3A41}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{8DC2C8D9-853E-4298-8FA0-B3555F9F3A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC2C8D9-853E-4298-8FA0-B3555F9F3A41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DC2C8D9-853E-4298-8FA0-B3555F9F3A41}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC2C8D9-853E-4298-8FA0-B3555F9F3A41}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{B75B676E-8AD3-46F9-B8AE-FB221CA79A4B}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{B75B676E-8AD3-46F9-B8AE-FB221CA79A4B}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{B75B676E-8AD3-46F9-B8AE-FB221CA79A4B}.Debug|Any CPU.ActiveCfg = DVD-5
+		{B75B676E-8AD3-46F9-B8AE-FB221CA79A4B}.Debug|Any CPU.Build.0 = DVD-5
+		{B75B676E-8AD3-46F9-B8AE-FB221CA79A4B}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{B75B676E-8AD3-46F9-B8AE-FB221CA79A4B}.DVD-5|Any CPU.Build.0 = DVD-5
+		{B75B676E-8AD3-46F9-B8AE-FB221CA79A4B}.Release|Any CPU.ActiveCfg = SingleImage
+		{B75B676E-8AD3-46F9-B8AE-FB221CA79A4B}.Release|Any CPU.Build.0 = SingleImage
+		{B75B676E-8AD3-46F9-B8AE-FB221CA79A4B}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{B75B676E-8AD3-46F9-B8AE-FB221CA79A4B}.SingleImage|Any CPU.Build.0 = SingleImage
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,145 @@
+﻿<Window x:Class="PJSMultiClock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wpfToolKit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        xmlns:local="clr-namespace:PJSMultiClock"
+       
+        mc:Ignorable="d"
+        Title="MultiClock" Height="800" Width="1200">
+    <Window.DataContext>
+        <local:ClockModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style TargetType="{x:Type Control}" x:Key="baseStyle">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Height" Value="30" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="{x:Type TextBlock}" >
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="12" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type Label}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource baseStyle}">
+            <Setter Property="Height" Value="30" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type wpfToolKit:TimePicker}" BasedOn="{StaticResource baseStyle}"></Style>
+        <!-- ComboBox, RadioButton, CheckBox, etc... -->
+    </Window.Resources>
+    <Grid  >
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.1,1" StartPoint="0.1,0">
+                <GradientStop Color="CornflowerBlue" Offset="0" />
+                <GradientStop Color="White" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="*">
+
+            </RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" ></ColumnDefinition>
+
+            <ColumnDefinition Width="2*" ></ColumnDefinition>
+            <ColumnDefinition Width="2*" ></ColumnDefinition>
+            <ColumnDefinition Width="4*" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="textBlock0" Grid.Row="0"  Grid.Column="0"    Text="Select Timezone"  Width="201" FontWeight="Bold" FontSize="24"/>
+        <TextBlock x:Name="textBlock"  Grid.Row="0"  Grid.Column="1"    Text="Now"  Width="58" FontSize="24" FontWeight="Bold"/>
+        <TextBlock x:Name="textBlock2" Grid.Row="0" Grid.Column="2"   Text="Enter a time"  Width="146" FontWeight="Bold" FontSize="24"   />
+        <TextBlock x:Name="textBlock1" Grid.Row="0" Grid.Column="3"    Text="Timezone info"  FontSize="24" FontWeight="Bold" Width="190" />
+
+
+        <TextBlock x:Name="textBlock3" Grid.Row="1" Grid.Column="0"  Text="Your PC"  Width="250"/>
+        <TextBlock x:Name="timeNow"  Grid.Row="1"  Grid.Column="1"  Text="{Binding ThisPc.NowString}"  Width="150" />
+        <wpfToolKit:TimePicker Name="tpNow" Grid.Row="1"  Grid.Column="2"  Value="{Binding ThisPc.RefTime, Mode=TwoWay }"  Format="ShortTime" Width="150"></wpfToolKit:TimePicker>
+        <TextBlock x:Name="tzinfoNow" Grid.Row="1" Grid.Column="3"  Text="{Binding ThisPc.TimeZoneInfo.DisplayName}" FontSize="14" Width="400"/>
+
+        
+<!--        CLOCK1-->
+        <ComboBox x:Name="tZId1"   Grid.Row="2" Grid.Column="0" FontSize="14"  Width="250" ItemsSource="{Binding}"  SelectionChanged="TimeZoneIdChanged"/>
+        <TextBlock x:Name="tzNow1"  Grid.Row="2" Grid.Column="1"  Text="{Binding Clock1.NowString , Mode=TwoWay}"  Width="150"  />
+        <wpfToolKit:TimePicker Name="tp1" Grid.Row="2" Grid.Column="2" Value="{Binding Clock1.RefTime, Mode=TwoWay}"   Format="ShortTime" Width="150"></wpfToolKit:TimePicker>
+        <TextBlock x:Name="tzinfo1" Grid.Row="2" Grid.Column="3"  Text="{Binding Clock1.TimeZoneInfo.DisplayName}" FontSize="14" Width="400"/>
+
+        <!--        CLOCK2-->
+        <ComboBox x:Name="tZId2"   Grid.Row="3" Grid.Column="0" FontSize="14"  Width="250" ItemsSource="{Binding}"  SelectionChanged="TimeZoneIdChanged"/>
+        <TextBlock x:Name="tzNow2"  Grid.Row="3" Grid.Column="1"  Text="{Binding Clock2.NowString , Mode=TwoWay}"  Width="150"  />
+        <wpfToolKit:TimePicker Name="tp2" Grid.Row="3" Grid.Column="2" Value="{Binding Clock2.RefTime, Mode=TwoWay}"   Format="ShortTime" Width="150"></wpfToolKit:TimePicker>
+        <TextBlock x:Name="tzinfo2" Grid.Row="3" Grid.Column="3"  Text="{Binding Clock2.TimeZoneInfo.DisplayName}" FontSize="14" Width="400"/>
+
+        <!--        CLOCK3-->
+        <ComboBox x:Name="tZId3"   Grid.Row="4" Grid.Column="0" FontSize="14"  Width="250" ItemsSource="{Binding}"  SelectionChanged="TimeZoneIdChanged"/>
+        <TextBlock x:Name="tzNow3"  Grid.Row="4" Grid.Column="1"  Text="{Binding Clock3.NowString , Mode=TwoWay}"  Width="150"  />
+        <wpfToolKit:TimePicker Name="tp3" Grid.Row="4" Grid.Column="2" Value="{Binding Clock3.RefTime, Mode=TwoWay}"   Format="ShortTime" Width="150"></wpfToolKit:TimePicker>
+        <TextBlock x:Name="tzinfo3" Grid.Row="4" Grid.Column="3"  Text="{Binding Clock3.TimeZoneInfo.DisplayName}" FontSize="14" Width="400"/>
+
+        <!--        CLOCK4-->
+        <ComboBox x:Name="tZId4"   Grid.Row="5" Grid.Column="0" FontSize="14"  Width="250" ItemsSource="{Binding}"  SelectionChanged="TimeZoneIdChanged"/>
+        <TextBlock x:Name="tzNow4"  Grid.Row="5" Grid.Column="1"  Text="{Binding Clock4.NowString , Mode=TwoWay}"  Width="150"  />
+        <wpfToolKit:TimePicker Name="tp4" Grid.Row="5" Grid.Column="2" Value="{Binding Clock4.RefTime, Mode=TwoWay}"   Format="ShortTime" Width="150"></wpfToolKit:TimePicker>
+        <TextBlock x:Name="tzinfo4" Grid.Row="5" Grid.Column="3"  Text="{Binding Clock4.TimeZoneInfo.DisplayName}" FontSize="14" Width="400"/>
+
+        <!--        CLOCK5-->
+        <ComboBox x:Name="tZId5"          Grid.Row="6" Grid.Column="0" FontSize="14"  Width="250" ItemsSource="{Binding}"  SelectionChanged="TimeZoneIdChanged"/>
+        <TextBlock x:Name="tzNow5"        Grid.Row="6" Grid.Column="1"  Text="{Binding Clock5.NowString , Mode=TwoWay}"  Width="150"  />
+        <wpfToolKit:TimePicker Name="tp5" Grid.Row="6" Grid.Column="2" Value="{Binding Clock5.RefTime, Mode=TwoWay}"   Format="ShortTime" Width="150"></wpfToolKit:TimePicker>
+        <TextBlock x:Name="tzinfo5"       Grid.Row="6" Grid.Column="3"  Text="{Binding Clock5.TimeZoneInfo.DisplayName}" FontSize="14" Width="400"/>
+
+        <!--        CLOCK6-->
+        <ComboBox x:Name="tZId6"          Grid.Row="7" Grid.Column="0" FontSize="14"  Width="250" ItemsSource="{Binding}" SelectionChanged="TimeZoneIdChanged" />
+        <TextBlock x:Name="tzNow6"        Grid.Row="7" Grid.Column="1"  Text="{Binding Clock6.NowString , Mode=TwoWay}"  Width="150"  />
+        <wpfToolKit:TimePicker Name="tp6" Grid.Row="7" Grid.Column="2" Value="{Binding Clock6.RefTime, Mode=TwoWay}"   Format="ShortTime" Width="150"></wpfToolKit:TimePicker>
+        <TextBlock x:Name="tzinfo6"       Grid.Row="7" Grid.Column="3"  Text="{Binding Clock6.TimeZoneInfo.DisplayName}" FontSize="14" Width="400"/>
+
+        <!--        CLOCK7-->
+        <ComboBox x:Name="tZId7"          Grid.Row="8" Grid.Column="0" FontSize="14"  Width="250" ItemsSource="{Binding}" SelectionChanged="TimeZoneIdChanged" />
+        <TextBlock x:Name="tzNow7"        Grid.Row="8" Grid.Column="1"  Text="{Binding Clock7.NowString , Mode=TwoWay}"  Width="150"  />
+        <wpfToolKit:TimePicker Name="tp7" Grid.Row="8" Grid.Column="2" Value="{Binding Clock7.RefTime, Mode=TwoWay}"   Format="ShortTime" Width="150"></wpfToolKit:TimePicker>
+        <TextBlock x:Name="tzinfo7"       Grid.Row="8" Grid.Column="3"  Text="{Binding Clock7.TimeZoneInfo.DisplayName}" FontSize="14" Width="400"/>
+
+        <!--        CLOCK8-->
+        <ComboBox x:Name="tZId8"          Grid.Row="9" Grid.Column="0" FontSize="14"  Width="250" ItemsSource="{Binding}" SelectionChanged="TimeZoneIdChanged" />
+        <TextBlock x:Name="tzNow8"        Grid.Row="9" Grid.Column="1"  Text="{Binding Clock8.NowString , Mode=TwoWay}"  Width="150"  />
+        <wpfToolKit:TimePicker Name="tp8" Grid.Row="9" Grid.Column="2" Value="{Binding Clock8.RefTime, Mode=TwoWay}"   Format="ShortTime" Width="150"></wpfToolKit:TimePicker>
+        <TextBlock x:Name="tzinfo8"       Grid.Row="9" Grid.Column="3"  Text="{Binding Clock8.TimeZoneInfo.DisplayName}" FontSize="14" Width="400"/>
+
+        <!--        CLOCK9-->
+        <ComboBox x:Name="tZId9"          Grid.Row="10" Grid.Column="0" FontSize="14"  Width="250" ItemsSource="{Binding }" SelectionChanged="TimeZoneIdChanged" />
+        <TextBlock x:Name="tzNow9"        Grid.Row="10" Grid.Column="1"  Text="{Binding Clock9.NowString , Mode=TwoWay}"  Width="150"  />
+        <wpfToolKit:TimePicker Name="tp9" Grid.Row="10" Grid.Column="2" Value="{Binding Clock9.RefTime, Mode=TwoWay}"   Format="ShortTime" Width="150"></wpfToolKit:TimePicker>
+        <TextBlock x:Name="tzinfo9"       Grid.Row="10" Grid.Column="3"  Text="{Binding Clock9.TimeZoneInfo.DisplayName}" FontSize="14" Width="400"/>
+
+      
+
+
+    </Grid>
+
+</Window>
